@@ -11,9 +11,9 @@ if you can please support Proxmox and buy one!
 
 Works for:
 
-- Proxmox VE (5.x or later, tested up to 8.x)
+- Proxmox VE (5.x or later, tested up to 9.x)
 - Proxmox Mail Gateway (5.x or later)
-- Proxmox Backup Server (1.x or later, tested up to 3.x)
+- Proxmox Backup Server (1.x or later, tested up to 4.x)
 
 Highlights:
 
