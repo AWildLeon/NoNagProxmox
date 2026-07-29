@@ -77,7 +77,7 @@ def activate_pve_pmg(key: str, subscription_file: str) -> None:
     with open(subscription_file, "w") as f:
         f.write(subscription)
 
-def generate_subscription_pbs(key: str, server_ids: List[str], url: str = "https://github.com/Games-Crack/NoNagProxmox") -> str:
+def generate_subscription_pbs(key: str, server_ids: List[str], url: str = "https://github.com/AWildLeon/NoNagProxmox") -> str:
     localinfo = {
         "status": "active", # PBS: `new`, `notfound`, `active`, `invalid`
         "serverid": ",".join(server_ids),
