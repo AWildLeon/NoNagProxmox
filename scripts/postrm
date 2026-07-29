@@ -8,7 +8,7 @@ after_remove() {
     rm -f /etc/proxmox-backup/subscription
 
     #remove Hosts if exists
-    sed -i '/127.0.0.1 shop.maurer-it.com/d' /etc/hosts
+    sed -i '/# Added by NoNagProxmox/d;/127\.0\.0\.1[[:space:]]\+shop\.maurer-it\.com/d' /etc/hosts
 }
 
 after_purge() {
