@@ -26,7 +26,7 @@ Highlights:
 ## Installation / Usage
 
 1. [Download the latest release](https://github.com/AWildLeon/NoNagProxmox/releases)
-1. Install: run `apt install NoNagProxmox_\*.deb` as root on every node
+1. Install: run `apt install ./NoNagProxmox_*.deb` as root on every node
 
 Notes:
 
