@@ -1,7 +1,7 @@
-name: "NoNagProxmox"
+name: "nonagproxmox"
 arch: "all"
 platform: "linux"
-version: "1.0.2"
+version: "1.0.3"
 version_schema: "semver"
 version_metadata: "git"
 conflicts:
