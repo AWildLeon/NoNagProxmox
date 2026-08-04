@@ -7,8 +7,8 @@ version_metadata: "git"
 conflicts:
   - "pve-fake-subscription"
 
-epoch: 0
-release: 1
+epoch: "0"
+release: "1"
 section: "admin"
 priority: "optional"
 
