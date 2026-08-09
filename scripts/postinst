@@ -20,18 +20,18 @@ after_upgrade() {
 after_install() {
     :
 
-    systemctl --system daemon-reload >/dev/null || true
-    debsystemctl=$(command -v deb-systemd-invoke || echo systemctl)
-    systemctl preset NoNagProxmox.timer >/dev/null || true
-    $debsystemctl start NoNagProxmox.timer >/dev/null || true
-
     #add Hosts if it not exists
-    grep -Fim1 shop.maurer-it.com /etc/hosts &>/dev/null || echo -e "\n# Added by NoNagProxmox\n127.0.0.1\tshop.maurer-it.com\n" >>/etc/hosts
+    grep -Fim1 shop.maurer-it.com /etc/hosts >/dev/null 2>&1 || printf '\n# Added by NoNagProxmox\n127.0.0.1\tshop.maurer-it.com\n\n' >>/etc/hosts
 
     #add config
     mkdir -p /etc/NoNagProxmox
     echo "No Nag Proxmox (Fake Subscription)" > /etc/NoNagProxmox/ProductName
     echo "No Subscription!" > /etc/NoNagProxmox/PBSMessage
+
+    systemctl --system daemon-reload >/dev/null || true
+    debsystemctl=$(command -v deb-systemd-invoke || echo systemctl)
+    systemctl preset NoNagProxmox.timer >/dev/null || true
+    $debsystemctl start NoNagProxmox.timer >/dev/null || true
 
     NoNagProxmox
 }

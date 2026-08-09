@@ -25,8 +25,8 @@ Highlights:
 
 ## Installation / Usage
 
-1. [Download the latest release](https://github.com/Games-Crack/NoNagProxmox/releases)
-1. Install: run `apt install NoNagProxmox_\*.deb` as root on every node
+1. [Download the latest release](https://github.com/AWildLeon/NoNagProxmox/releases)
+1. Install: run `apt install ./nonagproxmox_*.deb` as root on every node
 
 Notes:
 
@@ -43,9 +43,9 @@ The fake subscription status doesn't grant you free access to the enterprise rep
 Like any other debian package you can uninstall it easily.
 
 ```shell
-apt purge NoNagProxmox
+apt purge nonagproxmox
 # or
-apt remove NoNagProxmox
+apt remove nonagproxmox
 ```
 
 You Are Done!

@@ -1,6 +1,6 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: NoNagProxmox
-Source: https://github.com/Games-Crack/NoNagProxmox
+Source: https://github.com/AWildLeon/NoNagProxmox
 
 Files: *
 Copyright: 2023 Games_Crack

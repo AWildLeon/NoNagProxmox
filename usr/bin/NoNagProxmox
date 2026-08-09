@@ -77,7 +77,7 @@ def activate_pve_pmg(key: str, subscription_file: str) -> None:
     with open(subscription_file, "w") as f:
         f.write(subscription)
 
-def generate_subscription_pbs(key: str, server_ids: List[str]) -> str:
+def generate_subscription_pbs(key: str, server_ids: List[str], url: str = "https://github.com/AWildLeon/NoNagProxmox") -> str:
     localinfo = {
         "status": "active", # PBS: `new`, `notfound`, `active`, `invalid`
         "serverid": ",".join(server_ids),
@@ -87,7 +87,7 @@ def generate_subscription_pbs(key: str, server_ids: List[str]) -> str:
         "productname": product_name,
         "regdate": dt_string("%Y-%m-%d %H:%M:%S"),
         "nextduedate": dt_string("%Y-%m-%d", 1296000), # 1296000: MAX_LOCAL_KEY_AGE in src/tools/subscription.rs
-        "url": "https://github.com/Games-Crack/NoNagProxmox",
+        "url": url,
     }
 
     data = base64.standard_b64encode(json.dumps(localinfo).encode()).decode()
@@ -97,14 +97,14 @@ def generate_subscription_pbs(key: str, server_ids: List[str]) -> str:
     return key + "\n" + csum + "\n" + data + "\n"
 
 # Key pattern: pbst-xxxxxxxxxx
-def activate_pbs(key: str, subscription_file: str) -> None:
+def activate_pbs(key: str, subscription_file: str, *args, **kwargs) -> None:
     # get machine ID
     server_id = ""
     with open(server_key_file, "r") as f:
         server_id = generate_server_id(f.read())
 
     # generate a license file
-    subscription = generate_subscription_pbs(key, [server_id])
+    subscription = generate_subscription_pbs(key, [server_id], *args, **kwargs)
 
     # write license file
     with open(subscription_file, "w") as f:
